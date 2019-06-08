@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>添加院系</h2>
+    <div class="content-box">
+
+      <form action="{:U('Admin/Depart/add')}" method="post">
+        <table>
+          <tr>
+            <td>院系</td>
+            <td><input class="text-input" name="name" type="text"/></td>
+          </tr>
+
+          <tr>
+            <td>备注</td>
+            <td><textarea name="remark"></textarea></td>
+          </tr>
+
+          <tr>
+            <td cols="4"></td>
+            <td><input class="button" name="add" type="submit" value="添加"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

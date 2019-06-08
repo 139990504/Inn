@@ -1,0 +1,66 @@
+<!-- Wrapper for the radial gradient background -->
+<div id="sidebar">
+  <div id="sidebar-wrapper">
+    <!-- Sidebar with logo and menu -->
+    <!--<h1 id="sidebar-title"><a href="{:U('admin/admin/index')}">学籍管理系统</a></h1>-->
+    <!-- Logo (221px wide) -->
+    <a class="admin-title" href="/admin.php">
+      学籍管理系统
+      <!--<img id="logo" src="__PUBLIC__/images/logo.png" alt="Simpla Admin logo" />-->
+    </a>
+    <!-- Sidebar Profile links -->
+    <div id="profile-links"> 你好, 管理员 <br/>
+      <br/>
+      <a href="{:U('Admin/Admin/logout')}" title="退出">退出</a></div>
+    <ul id="main-nav">
+      <!-- Accordion Menu -->
+
+      <li><a class="nav-top-item " href="#">
+        <!-- Add the class "current" to current menu item -->
+        学生管理 </a>
+        <ul>
+          <li><a href="{:U('Admin/stu/showAll')}">学生列表</a></li>
+          <li><a href="{:U('Admin/stu/showAdd')}">添加学生</a></li>
+
+        </ul>
+      </li>
+      <li><a class="nav-top-item " href="#">
+        <!-- Add the class "current" to current menu item -->
+        成绩管理 </a>
+        <ul>
+          <li><a href="{:U('Admin/StuScore/showAll')}">成绩列表</a></li>
+          <li><a href="{:U('Admin/StuScore/showAdd')}">成绩录入</a></li>
+
+        </ul>
+      </li>
+      <li><a class="nav-top-item " href="#">
+        <!-- Add the class "current" to current menu item -->
+        院系管理 </a>
+        <ul>
+          <li><a href="{:U('Admin/depart/showAll')}">院系列表</a></li>
+          <li><a href="{:U('Admin/depart/showAdd')}">添加院系</a></li>
+
+        </ul>
+      </li>
+      <li><a class="nav-top-item " href="#">
+        <!-- Add the class "current" to current menu item -->
+        班别管理 </a>
+        <ul>
+          <li><a href="{:U('Admin/class/showAll')}">班别列表</a></li>
+          <li><a href="{:U('Admin/class/showAdd')}">添加班别</a></li>
+
+        </ul>
+      </li>
+
+      <li><a class="nav-top-item" href="#"> 用户管理 </a>
+        <ul>
+          <li><a href="{:U('Admin/User/showAll')}">用户列表</a></li>
+          <li><a href="{:U('Admin/User/showAdd')}">用户添加</a></li>
+        </ul>
+      </li>
+      <!-- End #main-nav -->
+      <!-- End #messages -->
+    </ul>
+  </div>
+</div>
+<!-- End #sidebar -->

@@ -1,0 +1,61 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>修改学生信息</h2>
+    <div class="content-box">
+      <form action="{:U('Admin/stu/update',array('id'=>$stu_list['id']))}" method="post">
+        <table>
+          <tr>
+            <td>姓名</td>
+            <td><input class="text-input" name="name" type="text" value="{$stu_list['name']}"/></td>
+          </tr>
+          <tr>
+            <td>性别</td>
+            <td><input class="text-input" name="sex" type="text" value="{$stu_list['sex']}"/></td>
+          </tr>
+          <tr>
+            <td>年龄</td>
+            <td><input class="text-input" name="birth" type="date" value="{$stu_list['birth']}"/></td>
+          </tr>
+          <tr>
+            <td>成绩</td>
+            <td><input class="text-input" name="score" type="text" value="{$stu_list['score']}"/></td>
+          </tr>
+          <tr>
+            <td>班别</td>
+            <td>
+              <select name="class_id">
+                <option value="">请选择班别</option>
+                <volist id="vo" name="classList">
+                  <option value="{$vo.id}"
+                  <eq name="vo.id" value="$stu_list['class_id']">selected</eq>
+                  >{$vo.name}</option>
+                </volist>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td cols="5"></td>
+            <td><input class="button" name="update" type="submit" value="修改"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

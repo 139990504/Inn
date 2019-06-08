@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<include file="common/header"/>
+<body id="login">
+<div class="png_bg" id="login-wrapper">
+  <div id="login-top">
+    <h1>网院实验小组@华中科技大学</h1>
+    <!-- Logo (221px width) -->
+    <div class="admin-title" href="">
+      <span>学籍管理系统</span>
+      <!--<img id="logo" src="__PUBLIC__/images/logo.png" alt="管理logo" />-->
+    </div>
+  </div>
+  <!-- End #logn-top -->
+  <div id="login-content">
+    <form action="{:U('Admin/Admin/login')}" method="post">
+      <div class="notification information png_bg">
+        <div> 请输入管理员账号和密码登录</div>
+      </div>
+      <p>
+        <label>后台账号</label>
+        <input class="text-input" name="username" type="text"/>
+      </p>
+      <div class="clear"></div>
+      <p>
+        <label>登录密码</label>
+        <input class="text-input" name="password" type="password"/>
+      </p>
+      <div class="clear"></div>
+      <!--<p id="remember-password">
+          <input type="checkbox" id="remember"/>
+          记住密码 </p>-->
+      <div class="clear"></div>
+      <p>
+        <input class="button" name="login" type="submit" value="登录"/>
+      </p>
+    </form>
+  </div>
+  <!-- End #login-content -->
+  <include file="common/footer"/>
+</div>
+<!-- End #login-wrapper -->
+<script>
+    $(function () {
+        if (localStorage.loginTemp) {
+            $('[name="username"]').val(localStorage.loginTemp.username);
+            $('[name="password"]').val(localStorage.loginTemp.password);
+            $('#remember').prop('checked', localStorage.loginTemp.remember)
+        }
+
+    });
+
+    function onSubmit() {
+        if ($('#remember').prop('checked')) {
+            localStorage.loginTemp = {
+                username: $('[name="username"]').val(),
+                password: $('[name="password"]').val(),
+                remember: $('#remember').prop('checked'),
+            }
+        } else {
+            localStorage.loginTemp = null;
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

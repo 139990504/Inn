@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>修改成绩</h2>
+    <div class="content-box">
+      <form action="{:U('Admin/stuscore/update',array('id'=>$stu_list['id']))}" method="post">
+        <table>
+
+          <tr>
+            <td>姓名</td>
+            <td>
+              <input class="text-input" list="stus" name="stu_name" type="text" value="{$stu_list['name']}"/>
+              <datalist id="stus">
+
+              </datalist>
+            </td>
+          </tr>
+          <tr>
+            <td>学号</td>
+            <td><input class="text-input" name="stu_id" type="text" value="{$stu_list['stu_id']}"/></td>
+          </tr>
+          <tr>
+            <td>科目</td>
+            <td>
+              <select name="sub_id">
+                <option value="">请选择科目</option>
+                <volist id="vo" name="subList">
+                  <option value="{$vo.id}">{$vo.name}</option>
+                </volist>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>成绩</td>
+            <td><input class="text-input" name="score" type="text" value="{$stu_list['score']}"/></td>
+          </tr>
+          <tr>
+            <td cols="5"></td>
+            <td><input class="button" name="update" type="submit" value="修改"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+<script>
+    $('[name="stu_name"]').bind('input propertychange', function () {
+        $.get("{:U('Stu/showAll')}", {
+            name: $(this).val()
+        }, function (res) {
+            console.log(res);
+            if (res) {
+                var options = '';
+                for (var i in res) {
+
+                    options += "<option value='" + res[i].name + "'>" + res[i].id + "</option>"
+                }
+                $('#stus').html(options);
+            }
+        }, 'json')
+    })
+    $('[name="stu_name"]').change(function () {
+        $('[name="stu_id"]').val($('#stus option').text())
+    })
+</script>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

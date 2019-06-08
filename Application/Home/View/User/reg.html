@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>Simpla Admin by www.865171.cn</title>
+  <!--                       CSS                       -->
+  <!-- Reset Stylesheet -->
+  <link href="__PUBLIC__/css/reset.css" media="screen" rel="stylesheet" type="text/css"/>
+  <!-- Main Stylesheet -->
+  <link href="__PUBLIC__/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+  <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+  <link href="__PUBLIC__/css/invalid.css" media="screen" rel="stylesheet" type="text/css"/>
+  <!--                       Javascripts                       -->
+  <!-- jQuery -->
+  <script src="__PUBLIC__/scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+  <!-- jQuery Configuration -->
+  <script src="__PUBLIC__/scripts/simpla.jquery.configuration.js" type="text/javascript"></script>
+  <!-- Facebox jQuery Plugin -->
+  <script src="__PUBLIC__/scripts/facebox.js" type="text/javascript"></script>
+  <!-- jQuery WYSIWYG Plugin -->
+  <script src="__PUBLIC__/scripts/jquery.wysiwyg.js" type="text/javascript"></script>
+  <!-- jQuery Datepicker Plugin -->
+  <script src="__PUBLIC__/scripts/jquery.datePicker.js" type="text/javascript"></script>
+  <script src="__PUBLIC__/scripts/jquery.date.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="body-wrapper">
+  <!-- Wrapper for the radial gradient background -->
+  <div id="sidebar">
+    <div id="sidebar-wrapper">
+      <!-- Sidebar with logo and menu -->
+      <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+      <!-- Logo (221px wide) -->
+      <a href="http://www.865171.cn"><img alt="Simpla Admin logo" id="logo" src="__PUBLIC__/images/logo.png"/></a>
+      <!-- Sidebar Profile links -->
+      <div id="profile-links"> Hello, {$username} <br/>
+        <br/>
+        <a href="{:U('Home/User/logout')}" title="退出">退出</a></div>
+      <ul id="main-nav">
+        <!-- Accordion Menu -->
+
+        <li><a class="nav-top-item current" href="#">
+          <!-- Add the class "current" to current menu item -->
+          学生管理 </a>
+          <ul>
+            <li><a href="http://localhost/cms2/admin.php/stu/showAll">学员列表</a></li>
+            <li><a href="http://localhost/cms2/admin.php/stu/showAdd">添加学生</a></li>
+
+          </ul>
+        </li>
+        <!-- End #main-nav -->
+        <!-- End #messages -->
+      </ul>
+    </div>
+  </div>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>用户注册</h2>
+    <div class="content-box">
+
+      <form action="http://localhost/cms2/index.php/home/user/reg" method="post">
+        <table>
+          <tr>
+            <td>用户名</td>
+            <td><input name="username" type="text"/></td>
+          </tr>
+          <tr>
+            <td>密码</td>
+            <td><input name="password" type="password"/></td>
+          </tr>
+
+          <tr>
+            <td>确认密码</td>
+            <td><input name="passwordq" type="password"/></td>
+          </tr>
+          <tr>
+            <td>注册为</td>
+            <td>
+              <select name="role">
+                <option value="1">班主任</option>
+                <option value="2">年级主任</option>
+              </select>
+
+            </td>
+          </tr>
+          <tr>
+            <td>班级</td>
+            <td><input name="class" type="text"/></td>
+          </tr>
+          <tr>
+            <td>年级</td>
+            <td><input name="grade" type="text"/></td>
+          </tr>
+          <tr>
+            <td>验证码</td>
+            <td><input name="verify" size="4" type="text"/>
+              <img alt="验证码图片" onClick="this.src=this.src+'?'+Math.random()"
+                   src="http://localhost/cms2/index.php/home/user/verify">
+            </td>
+          </tr>
+          <tr>
+            <td cols="5"></td>
+            <td><input name="reg" type="submit" value="注册"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <!-- End .shortcut-buttons-set -->
+    <div class="clear"></div>
+    <!-- End .clear -->
+
+    <div id="footer">
+      <small>
+        <!-- Remove this notice or replace it with whatever you want -->
+        &#169; Copyright 2010 Your Company | Powered by <a href="http://www.865171.cn">admin templates</a> | <a
+          href="#">Top</a></small>
+    </div>
+    <!-- End #footer -->
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

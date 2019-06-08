@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>修改用户信息</h2>
+    <div class="content-box">
+
+      <form action="{:U('Admin/user/update',array('id'=>$user_list['id']))}" method="post">
+        <table>
+          <tr>
+            <td>姓名</td>
+            <td><input class="text-input" name="username" readonlys type="text" value="{$user_list['username']}"/></td>
+          </tr>
+          <tr>
+            <td>角色</td>
+            <td><input class="text-input" name="role" type="text" value="{$user_list['role']}"/></td>
+          </tr>
+          <tr>
+            <td>班级</td>
+            <td><input class="text-input" name="class" type="text" value="{$user_list['class']}"/></td>
+          </tr>
+          <tr>
+            <td>年级</td>
+            <td><input class="text-input" name="grade" type="text" value="{$user_list['grade']}"/></td>
+          </tr>
+          <tr>
+            <td cols="5"></td>
+            <td><input class="button" name="update" type="submit" value="修改"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

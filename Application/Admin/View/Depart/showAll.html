@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>院系管理</h2>
+
+    <!-- End .shortcut-buttons-set -->
+    <div class="clear"></div>
+    <!-- End .clear -->
+    <div class="content-box">
+      <!-- Start Content Box -->
+      <div class="content-box-header">
+        <h3>信息列表</h3>
+        <ul class="content-box-tabs">
+          <li><a class="default-tab" href="#tab1">基本信息</a></li>
+          <!-- href must be unique and match the id of target div -->
+
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <!-- End .content-box-header -->
+      <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1">
+
+          <table>
+            <thead>
+            <tr>
+              <th>
+                <input class="check-all" type="checkbox"/>
+              </th>
+              <th>院系</th>
+              <th>备注</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+              <td colspan="6">
+                <div class="pagination">{$pageControl}</div>
+                <!-- End .pagination -->
+                <div class="clear"></div>
+              </td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <volist id="vo" name="list">
+              <tr>
+
+                <td>
+                  <input name="id[]" type="checkbox"/>
+                </td>
+                <td>{$vo['name']}</td>
+                <td>{$vo['remark']}</td>
+                <td>
+                  <!-- Icons -->
+                  <a href="{:U('Admin/Depart/showUpdate',array('id'=>$vo['id']))}" title="Edit">
+                    <img alt="Edit" src="__PUBLIC__/images/icons/pencil.png"/></a>
+                  <a href="{:U('Admin/Depart/del',array('id'=>$vo['id']))}" title="Delete"><img alt="Delete"
+                                                                                                src="__PUBLIC__/images/icons/cross.png"/></a>
+                </td>
+
+              </tr>
+            </volist>
+
+            </tbody>
+          </table>
+        </div>
+        <!-- End #tab1 -->
+
+      </div>
+      <!-- End .content-box-content -->
+    </div>
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>

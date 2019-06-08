@@ -1,0 +1,54 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<include file="common/header"/>
+<body>
+<div id="body-wrapper">
+
+  <include file="common/menu"/>
+  <!-- End #sidebar -->
+  <div id="main-content">
+
+    <!-- Page Head -->
+    <h2>修改班别信息</h2>
+    <div class="content-box">
+
+      <form action="{:U('Admin/Class/update',array('id'=>$info['id']))}" method="post">
+        <table>
+          <tr>
+            <td>班名</td>
+            <td><input class="text-input" name="username" type="text" value="{$info['name']}"/></td>
+          </tr>
+          <tr>
+            <td>院系</td>
+            <td>
+              <select name="depart_id">
+                <option value="">请选择院系</option>
+                <volist id="vo" name="departList">
+                  <option value="{$vo.id}"
+                  <eq name="vo.id" value="$info['depart_id']">selected</eq>
+                  >{$vo.name}</option>
+                </volist>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>备注</td>
+            <td><input name="class" type="text" value="{$info['remark']}"/></td>
+          </tr>
+          <tr>
+            <td cols="4"></td>
+            <td><input class="button" name="update" type="submit" value="修改"/></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+
+    <include file="common/footer"/>
+  </div>
+  <!-- End #main-content -->
+</div>
+</body>
+<!-- Download From www.exet.tk-->
+</html>
